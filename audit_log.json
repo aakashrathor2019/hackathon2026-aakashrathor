@@ -1,0 +1,1520 @@
+[
+  {
+    "timestamp": "2026-04-19T19:00:22.448802",
+    "ticket_id": "TKT-001",
+    "customer": "Alice Turner",
+    "action": "deny",
+    "confidence": 0.85,
+    "reason": "Hi Alice, Past return deadline. Please review our return policy.",
+    "factors": [
+      "customer_verified",
+      "order_found"
+    ],
+    "tool_calls": [
+      {
+        "get_customer": {
+          "email": "alice.turner@email.com"
+        }
+      },
+      {
+        "get_order": {
+          "order_id": "ORD-1001"
+        }
+      },
+      {
+        "get_product": {
+          "product_id": "P001"
+        }
+      },
+      {
+        "check_refund_eligibility": {
+          "order_id": "ORD-1001"
+        }
+      }
+    ],
+    "latency_ms": 0,
+    "processed_at": 1776605422.44878
+  },
+  {
+    "timestamp": "2026-04-19T19:00:22.449498",
+    "ticket_id": "TKT-002",
+    "customer": "Bob Mendes",
+    "action": "deny",
+    "confidence": 0.85,
+    "reason": "Hi Bob, Past return deadline. Please review our return policy.",
+    "factors": [
+      "customer_verified",
+      "order_found"
+    ],
+    "tool_calls": [
+      {
+        "get_customer": {
+          "email": "bob.mendes@email.com"
+        }
+      },
+      {
+        "get_order": {
+          "order_id": "ORD-1002"
+        }
+      },
+      {
+        "get_product": {
+          "product_id": "P006"
+        }
+      },
+      {
+        "check_refund_eligibility": {
+          "order_id": "ORD-1002"
+        }
+      }
+    ],
+    "latency_ms": 0,
+    "processed_at": 1776605422.4494128
+  },
+  {
+    "timestamp": "2026-04-19T19:00:22.450024",
+    "ticket_id": "TKT-003",
+    "customer": "Carol Nguyen",
+    "action": "deny",
+    "confidence": 0.85,
+    "reason": "Hi Carol, Past return deadline. Please review our return policy.",
+    "factors": [
+      "customer_verified",
+      "order_found"
+    ],
+    "tool_calls": [
+      {
+        "get_customer": {
+          "email": "carol.nguyen@email.com"
+        }
+      },
+      {
+        "get_order": {
+          "order_id": "ORD-1003"
+        }
+      },
+      {
+        "get_product": {
+          "product_id": "P003"
+        }
+      },
+      {
+        "check_refund_eligibility": {
+          "order_id": "ORD-1003"
+        }
+      }
+    ],
+    "latency_ms": 0,
+    "processed_at": 1776605422.4499574
+  },
+  {
+    "timestamp": "2026-04-19T19:00:22.450535",
+    "ticket_id": "TKT-004",
+    "customer": "David Park",
+    "action": "deny",
+    "confidence": 0.85,
+    "reason": "Hi David, Past return deadline. Please review our return policy.",
+    "factors": [
+      "customer_verified",
+      "order_found"
+    ],
+    "tool_calls": [
+      {
+        "get_customer": {
+          "email": "david.park@email.com"
+        }
+      },
+      {
+        "get_order": {
+          "order_id": "ORD-1004"
+        }
+      },
+      {
+        "get_product": {
+          "product_id": "P002"
+        }
+      },
+      {
+        "check_refund_eligibility": {
+          "order_id": "ORD-1004"
+        }
+      }
+    ],
+    "latency_ms": 0,
+    "processed_at": 1776605422.4504733
+  },
+  {
+    "timestamp": "2026-04-19T19:00:22.451247",
+    "ticket_id": "TKT-005",
+    "customer": "Emma Collins",
+    "action": "approve_refund",
+    "confidence": 1.0,
+    "reason": "Hi Emma, as a VIP customer, we've approved your return exception. Refund of $159.98 issued.",
+    "factors": [
+      "customer_verified",
+      "order_found",
+      "clear_policy"
+    ],
+    "tool_calls": [
+      {
+        "get_customer": {
+          "email": "emma.collins@email.com"
+        }
+      },
+      {
+        "get_order": {
+          "order_id": "ORD-1005"
+        }
+      },
+      {
+        "get_product": {
+          "product_id": "P008"
+        }
+      },
+      {
+        "check_refund_eligibility": {
+          "order_id": "ORD-1005"
+        }
+      },
+      {
+        "issue_refund": {
+          "order_id": "ORD-1005",
+          "amount": 159.98
+        }
+      },
+      {
+        "send_reply": {
+          "ticket_id": "TKT-005",
+          "message": "Hi Emma, as a VIP customer, we've approved your return exception. Refund of $159.98 issued."
+        }
+      }
+    ],
+    "latency_ms": 0,
+    "processed_at": 1776605422.4511752
+  },
+  {
+    "timestamp": "2026-04-19T19:00:22.452123",
+    "ticket_id": "TKT-006",
+    "customer": "Frank Osei",
+    "action": "need_info",
+    "confidence": 0.6,
+    "reason": "No order ID provided and no cancellable orders found.",
+    "factors": [
+      "customer_verified"
+    ],
+    "tool_calls": [
+      {
+        "get_customer": {
+          "email": "frank.osei@email.com"
+        }
+      },
+      {
+        "get_order": {
+          "order_id": "ORD-1006"
+        }
+      },
+      {
+        "get_order": {
+          "order_id": "ORD-1012"
+        }
+      },
+      {
+        "search_knowledge_base": {
+          "query": "hey, i just placed an order and i want to cancel it. can you do that?"
+        }
+      },
+      {
+        "send_reply": {
+          "ticket_id": "TKT-006",
+          "message": "No order ID provided and no cancellable orders found. Please share the order number or contact support."
+        }
+      }
+    ],
+    "latency_ms": 0,
+    "processed_at": 1776605422.4520278
+  },
+  {
+    "timestamp": "2026-04-19T19:00:22.453223",
+    "ticket_id": "TKT-007",
+    "customer": "Grace Patel",
+    "action": "deny",
+    "confidence": 0.85,
+    "reason": "Hi Grace, Past return deadline. Please review our return policy.",
+    "factors": [
+      "customer_verified",
+      "order_found"
+    ],
+    "tool_calls": [
+      {
+        "get_customer": {
+          "email": "grace.patel@email.com"
+        }
+      },
+      {
+        "get_order": {
+          "order_id": "ORD-1007"
+        }
+      },
+      {
+        "get_product": {
+          "product_id": "P004"
+        }
+      },
+      {
+        "check_refund_eligibility": {
+          "order_id": "ORD-1007"
+        }
+      }
+    ],
+    "latency_ms": 0,
+    "processed_at": 1776605422.453112
+  },
+  {
+    "timestamp": "2026-04-19T19:00:22.454069",
+    "ticket_id": "TKT-008",
+    "customer": "Henry Marsh",
+    "action": "send_reply",
+    "confidence": 1.0,
+    "reason": "Hi Henry, for damaged items with photos, we can process refund without return. Please confirm if you want refund or replacement.",
+    "factors": [
+      "customer_verified",
+      "order_found",
+      "clear_policy"
+    ],
+    "tool_calls": [
+      {
+        "get_customer": {
+          "email": "henry.marsh@email.com"
+        }
+      },
+      {
+        "get_order": {
+          "order_id": "ORD-1008"
+        }
+      },
+      {
+        "get_product": {
+          "product_id": "P007"
+        }
+      },
+      {
+        "send_reply": {
+          "ticket_id": "TKT-008",
+          "message": "Hi Henry, for damaged items with photos, we can process refund without return. Please confirm if you want refund or replacement."
+        }
+      }
+    ],
+    "latency_ms": 0,
+    "processed_at": 1776605422.45397
+  },
+  {
+    "timestamp": "2026-04-19T19:00:22.655530",
+    "ticket_id": "TKT-009",
+    "customer": "Irene Castillo",
+    "action": "escalate",
+    "confidence": 0.7,
+    "reason": "Hi Irene, our refund system is temporarily unavailable. Escalating to support.",
+    "factors": [
+      "customer_verified",
+      "order_found",
+      "escalation_needed"
+    ],
+    "tool_calls": [
+      {
+        "get_customer": {
+          "email": "irene.castillo@email.com"
+        }
+      },
+      {
+        "get_order": {
+          "order_id": "ORD-1009"
+        }
+      },
+      {
+        "get_product": {
+          "product_id": "P001"
+        }
+      },
+      {
+        "check_refund_eligibility": {
+          "order_id": "ORD-1009"
+        }
+      },
+      {
+        "escalate": {
+          "ticket_id": "TKT-009",
+          "summary": "Refund eligibility check failed for order ORD-1009",
+          "priority": "medium"
+        }
+      }
+    ],
+    "latency_ms": 200,
+    "processed_at": 1776605422.6552236
+  },
+  {
+    "timestamp": "2026-04-19T19:00:22.658392",
+    "ticket_id": "TKT-010",
+    "customer": "James Wu",
+    "action": "send_reply",
+    "confidence": 1.0,
+    "reason": "Hi James, No relevant policy found. Please rephrase your query.",
+    "factors": [
+      "customer_verified",
+      "order_found",
+      "clear_policy"
+    ],
+    "tool_calls": [
+      {
+        "get_customer": {
+          "email": "james.wu@email.com"
+        }
+      },
+      {
+        "get_order": {
+          "order_id": "ORD-1010"
+        }
+      },
+      {
+        "get_product": {
+          "product_id": "P003"
+        }
+      },
+      {
+        "search_knowledge_base": {
+          "query": "i ordered a coffee maker over 3 days ago and haven't received it. what is going on? order ord-1010."
+        }
+      },
+      {
+        "send_reply": {
+          "ticket_id": "TKT-010",
+          "message": "Hi James, No relevant policy found. Please rephrase your query."
+        }
+      }
+    ],
+    "latency_ms": 1,
+    "processed_at": 1776605422.658142
+  },
+  {
+    "timestamp": "2026-04-19T19:00:22.762064",
+    "ticket_id": "TKT-011",
+    "customer": "Error",
+    "action": "escalate",
+    "confidence": 0.0,
+    "reason": "Processing error: Knowledge base search timeout",
+    "factors": [
+      "error"
+    ],
+    "tool_calls": [],
+    "latency_ms": 100,
+    "processed_at": 1776605422.7614264
+  },
+  {
+    "timestamp": "2026-04-19T19:00:22.764572",
+    "ticket_id": "TKT-012",
+    "customer": "Carol Nguyen",
+    "action": "cancelled",
+    "confidence": 1.0,
+    "reason": "Hi Carol, your order ORD-1012 has been cancelled successfully. You will receive a confirmation email shortly.",
+    "factors": [
+      "customer_verified",
+      "order_found",
+      "clear_policy"
+    ],
+    "tool_calls": [
+      {
+        "get_customer": {
+          "email": "carol.nguyen@email.com"
+        }
+      },
+      {
+        "get_order": {
+          "order_id": "ORD-1012"
+        }
+      },
+      {
+        "get_product": {
+          "product_id": "P002"
+        }
+      },
+      {
+        "send_reply": {
+          "ticket_id": "TKT-012",
+          "message": "Hi Carol, your order ORD-1012 has been cancelled successfully. You will receive a confirmation email shortly."
+        }
+      }
+    ],
+    "latency_ms": 0,
+    "processed_at": 1776605422.7642906
+  },
+  {
+    "timestamp": "2026-04-19T19:00:22.967294",
+    "ticket_id": "TKT-013",
+    "customer": "Grace Patel",
+    "action": "escalate",
+    "confidence": 0.7,
+    "reason": "Hi Grace, our refund system is temporarily unavailable. Escalating to support.",
+    "factors": [
+      "customer_verified",
+      "order_found",
+      "escalation_needed"
+    ],
+    "tool_calls": [
+      {
+        "get_customer": {
+          "email": "grace.patel@email.com"
+        }
+      },
+      {
+        "get_order": {
+          "order_id": "ORD-1013"
+        }
+      },
+      {
+        "get_product": {
+          "product_id": "P008"
+        }
+      },
+      {
+        "check_refund_eligibility": {
+          "order_id": "ORD-1013"
+        }
+      },
+      {
+        "escalate": {
+          "ticket_id": "TKT-013",
+          "summary": "Refund eligibility check failed for order ORD-1013",
+          "priority": "medium"
+        }
+      }
+    ],
+    "latency_ms": 200,
+    "processed_at": 1776605422.9668927
+  },
+  {
+    "timestamp": "2026-04-19T19:00:22.970217",
+    "ticket_id": "TKT-014",
+    "customer": "Henry Marsh",
+    "action": "deny",
+    "confidence": 0.85,
+    "reason": "Hi Henry, Past return deadline. Please review our return policy.",
+    "factors": [
+      "customer_verified",
+      "order_found"
+    ],
+    "tool_calls": [
+      {
+        "get_customer": {
+          "email": "henry.marsh@email.com"
+        }
+      },
+      {
+        "get_order": {
+          "order_id": "ORD-1014"
+        }
+      },
+      {
+        "get_product": {
+          "product_id": "P006"
+        }
+      },
+      {
+        "check_refund_eligibility": {
+          "order_id": "ORD-1014"
+        }
+      }
+    ],
+    "latency_ms": 0,
+    "processed_at": 1776605422.9699247
+  },
+  {
+    "timestamp": "2026-04-19T19:00:22.974922",
+    "ticket_id": "TKT-015",
+    "customer": "Emma Collins",
+    "action": "approve_refund",
+    "confidence": 1.0,
+    "reason": "Hi Emma, as a VIP customer, we've approved your return exception. Refund of $199.99 issued.",
+    "factors": [
+      "customer_verified",
+      "order_found",
+      "clear_policy"
+    ],
+    "tool_calls": [
+      {
+        "get_customer": {
+          "email": "emma.collins@email.com"
+        }
+      },
+      {
+        "get_order": {
+          "order_id": "ORD-1015"
+        }
+      },
+      {
+        "get_product": {
+          "product_id": "P003"
+        }
+      },
+      {
+        "check_refund_eligibility": {
+          "order_id": "ORD-1015"
+        }
+      },
+      {
+        "issue_refund": {
+          "order_id": "ORD-1015",
+          "amount": 199.99
+        }
+      },
+      {
+        "send_reply": {
+          "ticket_id": "TKT-015",
+          "message": "Hi Emma, as a VIP customer, we've approved your return exception. Refund of $199.99 issued."
+        }
+      }
+    ],
+    "latency_ms": 0,
+    "processed_at": 1776605422.9743276
+  },
+  {
+    "timestamp": "2026-04-19T19:00:22.980063",
+    "ticket_id": "TKT-016",
+    "customer": "Unknown",
+    "action": "need_info",
+    "confidence": 0.4,
+    "reason": "Customer identity not verified",
+    "factors": [],
+    "tool_calls": [
+      {
+        "get_customer": {
+          "email": "unknown.user@email.com"
+        }
+      },
+      {
+        "search_knowledge_base": {
+          "query": "i want a refund for my order."
+        }
+      },
+      {
+        "send_reply": {
+          "ticket_id": "TKT-016",
+          "message": "Please verify your account email and provide an order number so I can help."
+        }
+      }
+    ],
+    "latency_ms": 0,
+    "processed_at": 1776605422.9795027
+  },
+  {
+    "timestamp": "2026-04-19T19:00:22.983558",
+    "ticket_id": "TKT-017",
+    "customer": "David Park",
+    "action": "need_info",
+    "confidence": 0.5,
+    "reason": "Order ID ORD-9999 not found. Please verify.",
+    "factors": [
+      "customer_verified"
+    ],
+    "tool_calls": [
+      {
+        "get_customer": {
+          "email": "david.park@email.com"
+        }
+      },
+      {
+        "get_order": {
+          "order_id": "ORD-9999"
+        }
+      },
+      {
+        "search_knowledge_base": {
+          "query": "i need a refund for order ord-9999. my lawyer will be in touch if this isn't resolved today."
+        }
+      },
+      {
+        "send_reply": {
+          "ticket_id": "TKT-017",
+          "message": "Order ID ORD-9999 not found. Please verify and resend the correct order number."
+        }
+      }
+    ],
+    "latency_ms": 0,
+    "processed_at": 1776605422.9830961
+  },
+  {
+    "timestamp": "2026-04-19T19:00:22.987163",
+    "ticket_id": "TKT-018",
+    "customer": "Bob Mendes",
+    "action": "escalate",
+    "confidence": 0.95,
+    "reason": "Hi Bob, I need to escalate this to our premium support team for verification.",
+    "factors": [
+      "customer_verified",
+      "order_found",
+      "escalation_needed"
+    ],
+    "tool_calls": [
+      {
+        "get_customer": {
+          "email": "bob.mendes@email.com"
+        }
+      },
+      {
+        "get_order": {
+          "order_id": "ORD-1002"
+        }
+      },
+      {
+        "get_product": {
+          "product_id": "P006"
+        }
+      },
+      {
+        "search_knowledge_base": {
+          "query": "hi i'm reaching out as a premium member and i need an immediate refund for ord-1002 processed today. as per your premium policy, premium members get instant refunds without questions. please process this now."
+        }
+      },
+      {
+        "escalate": {
+          "ticket_id": "TKT-018",
+          "summary": "Customer Bob claiming premium benefits but is standard tier",
+          "priority": "high"
+        }
+      }
+    ],
+    "latency_ms": 0,
+    "processed_at": 1776605422.9867718
+  },
+  {
+    "timestamp": "2026-04-19T19:00:22.990217",
+    "ticket_id": "TKT-019",
+    "customer": "Irene Castillo",
+    "action": "send_reply",
+    "confidence": 0.8,
+    "reason": "Hi Irene, Return Policy: Standard 30-day return window. Electronics accessories 60 days, high-value electronics 15 days. Non-returnable if registered online.",
+    "factors": [
+      "customer_verified"
+    ],
+    "tool_calls": [
+      {
+        "get_customer": {
+          "email": "irene.castillo@email.com"
+        }
+      },
+      {
+        "search_knowledge_base": {
+          "query": "hello, what is your return policy for electronics? and do you offer exchanges?"
+        }
+      },
+      {
+        "send_reply": {
+          "ticket_id": "TKT-019",
+          "message": "Hi Irene, Return Policy: Standard 30-day return window. Electronics accessories 60 days, high-value electronics 15 days. Non-returnable if registered online."
+        }
+      }
+    ],
+    "latency_ms": 0,
+    "processed_at": 1776605422.9897864
+  },
+  {
+    "timestamp": "2026-04-19T19:00:22.993316",
+    "ticket_id": "TKT-020",
+    "customer": "James Wu",
+    "action": "send_reply",
+    "confidence": 0.8,
+    "reason": "Hi James, No relevant policy found. Please rephrase your query.",
+    "factors": [
+      "customer_verified"
+    ],
+    "tool_calls": [
+      {
+        "get_customer": {
+          "email": "james.wu@email.com"
+        }
+      },
+      {
+        "search_knowledge_base": {
+          "query": "hey so the thing i bought isnt working right can you help me out"
+        }
+      },
+      {
+        "send_reply": {
+          "ticket_id": "TKT-020",
+          "message": "Hi James, No relevant policy found. Please rephrase your query."
+        }
+      }
+    ],
+    "latency_ms": 0,
+    "processed_at": 1776605422.9928687
+  },
+  {
+    "timestamp": "2026-04-19T19:03:27.331189",
+    "ticket_id": "TKT-001",
+    "customer": "Alice Turner",
+    "action": "escalate",
+    "confidence": 0.7,
+    "reason": "Hi Alice, our refund system is temporarily unavailable. Escalating to support.",
+    "factors": [
+      "customer_verified",
+      "order_found",
+      "escalation_needed"
+    ],
+    "tool_calls": [
+      {
+        "get_customer": {
+          "email": "alice.turner@email.com"
+        }
+      },
+      {
+        "get_order": {
+          "order_id": "ORD-1001"
+        }
+      },
+      {
+        "get_product": {
+          "product_id": "P001"
+        }
+      },
+      {
+        "check_refund_eligibility": {
+          "order_id": "ORD-1001"
+        }
+      },
+      {
+        "escalate": {
+          "ticket_id": "TKT-001",
+          "summary": "Refund eligibility check failed for order ORD-1001",
+          "priority": "medium"
+        }
+      }
+    ],
+    "latency_ms": 200,
+    "processed_at": 1776605607.3307977
+  },
+  {
+    "timestamp": "2026-04-19T19:03:27.534990",
+    "ticket_id": "TKT-002",
+    "customer": "Bob Mendes",
+    "action": "escalate",
+    "confidence": 0.7,
+    "reason": "Hi Bob, our refund system is temporarily unavailable. Escalating to support.",
+    "factors": [
+      "customer_verified",
+      "order_found",
+      "escalation_needed"
+    ],
+    "tool_calls": [
+      {
+        "get_customer": {
+          "email": "bob.mendes@email.com"
+        }
+      },
+      {
+        "get_order": {
+          "order_id": "ORD-1002"
+        }
+      },
+      {
+        "get_product": {
+          "product_id": "P006"
+        }
+      },
+      {
+        "check_refund_eligibility": {
+          "order_id": "ORD-1002"
+        }
+      },
+      {
+        "escalate": {
+          "ticket_id": "TKT-002",
+          "summary": "Refund eligibility check failed for order ORD-1002",
+          "priority": "medium"
+        }
+      }
+    ],
+    "latency_ms": 200,
+    "processed_at": 1776605607.5340605
+  },
+  {
+    "timestamp": "2026-04-19T19:03:27.541260",
+    "ticket_id": "TKT-003",
+    "customer": "Carol Nguyen",
+    "action": "deny",
+    "confidence": 0.85,
+    "reason": "Hi Carol, Past return deadline. Please review our return policy.",
+    "factors": [
+      "customer_verified",
+      "order_found"
+    ],
+    "tool_calls": [
+      {
+        "get_customer": {
+          "email": "carol.nguyen@email.com"
+        }
+      },
+      {
+        "get_order": {
+          "order_id": "ORD-1003"
+        }
+      },
+      {
+        "get_product": {
+          "product_id": "P003"
+        }
+      },
+      {
+        "check_refund_eligibility": {
+          "order_id": "ORD-1003"
+        }
+      }
+    ],
+    "latency_ms": 0,
+    "processed_at": 1776605607.5405228
+  },
+  {
+    "timestamp": "2026-04-19T19:03:27.546444",
+    "ticket_id": "TKT-004",
+    "customer": "David Park",
+    "action": "deny",
+    "confidence": 0.85,
+    "reason": "Hi David, Past return deadline. Please review our return policy.",
+    "factors": [
+      "customer_verified",
+      "order_found"
+    ],
+    "tool_calls": [
+      {
+        "get_customer": {
+          "email": "david.park@email.com"
+        }
+      },
+      {
+        "get_order": {
+          "order_id": "ORD-1004"
+        }
+      },
+      {
+        "get_product": {
+          "product_id": "P002"
+        }
+      },
+      {
+        "check_refund_eligibility": {
+          "order_id": "ORD-1004"
+        }
+      }
+    ],
+    "latency_ms": 0,
+    "processed_at": 1776605607.5458045
+  },
+  {
+    "timestamp": "2026-04-19T19:03:27.550363",
+    "ticket_id": "TKT-005",
+    "customer": "Emma Collins",
+    "action": "approve_refund",
+    "confidence": 1.0,
+    "reason": "Hi Emma, as a VIP customer, we've approved your return exception. Refund of $159.98 issued.",
+    "factors": [
+      "customer_verified",
+      "order_found",
+      "clear_policy"
+    ],
+    "tool_calls": [
+      {
+        "get_customer": {
+          "email": "emma.collins@email.com"
+        }
+      },
+      {
+        "get_order": {
+          "order_id": "ORD-1005"
+        }
+      },
+      {
+        "get_product": {
+          "product_id": "P008"
+        }
+      },
+      {
+        "check_refund_eligibility": {
+          "order_id": "ORD-1005"
+        }
+      },
+      {
+        "issue_refund": {
+          "order_id": "ORD-1005",
+          "amount": 159.98
+        }
+      },
+      {
+        "send_reply": {
+          "ticket_id": "TKT-005",
+          "message": "Hi Emma, as a VIP customer, we've approved your return exception. Refund of $159.98 issued."
+        }
+      }
+    ],
+    "latency_ms": 0,
+    "processed_at": 1776605607.5498724
+  },
+  {
+    "timestamp": "2026-04-19T19:03:27.555512",
+    "ticket_id": "TKT-006",
+    "customer": "Frank Osei",
+    "action": "need_info",
+    "confidence": 0.6,
+    "reason": "No order ID provided and no cancellable orders found.",
+    "factors": [
+      "customer_verified"
+    ],
+    "tool_calls": [
+      {
+        "get_customer": {
+          "email": "frank.osei@email.com"
+        }
+      },
+      {
+        "get_order": {
+          "order_id": "ORD-1006"
+        }
+      },
+      {
+        "get_order": {
+          "order_id": "ORD-1012"
+        }
+      },
+      {
+        "search_knowledge_base": {
+          "query": "hey, i just placed an order and i want to cancel it. can you do that?"
+        }
+      },
+      {
+        "send_reply": {
+          "ticket_id": "TKT-006",
+          "message": "No order ID provided and no cancellable orders found. Please share the order number or contact support."
+        }
+      }
+    ],
+    "latency_ms": 0,
+    "processed_at": 1776605607.55491
+  },
+  {
+    "timestamp": "2026-04-19T19:03:27.559700",
+    "ticket_id": "TKT-007",
+    "customer": "Grace Patel",
+    "action": "deny",
+    "confidence": 0.85,
+    "reason": "Hi Grace, Past return deadline. Please review our return policy.",
+    "factors": [
+      "customer_verified",
+      "order_found"
+    ],
+    "tool_calls": [
+      {
+        "get_customer": {
+          "email": "grace.patel@email.com"
+        }
+      },
+      {
+        "get_order": {
+          "order_id": "ORD-1007"
+        }
+      },
+      {
+        "get_product": {
+          "product_id": "P004"
+        }
+      },
+      {
+        "check_refund_eligibility": {
+          "order_id": "ORD-1007"
+        }
+      }
+    ],
+    "latency_ms": 0,
+    "processed_at": 1776605607.5592074
+  },
+  {
+    "timestamp": "2026-04-19T19:03:27.564048",
+    "ticket_id": "TKT-008",
+    "customer": "Henry Marsh",
+    "action": "send_reply",
+    "confidence": 1.0,
+    "reason": "Hi Henry, for damaged items with photos, we can process refund without return. Please confirm if you want refund or replacement.",
+    "factors": [
+      "customer_verified",
+      "order_found",
+      "clear_policy"
+    ],
+    "tool_calls": [
+      {
+        "get_customer": {
+          "email": "henry.marsh@email.com"
+        }
+      },
+      {
+        "get_order": {
+          "order_id": "ORD-1008"
+        }
+      },
+      {
+        "get_product": {
+          "product_id": "P007"
+        }
+      },
+      {
+        "send_reply": {
+          "ticket_id": "TKT-008",
+          "message": "Hi Henry, for damaged items with photos, we can process refund without return. Please confirm if you want refund or replacement."
+        }
+      }
+    ],
+    "latency_ms": 0,
+    "processed_at": 1776605607.5635324
+  },
+  {
+    "timestamp": "2026-04-19T19:03:27.569334",
+    "ticket_id": "TKT-009",
+    "customer": "Irene Castillo",
+    "action": "deny",
+    "confidence": 0.85,
+    "reason": "Hi Irene, Refund already processed. Please review our return policy.",
+    "factors": [
+      "customer_verified",
+      "order_found"
+    ],
+    "tool_calls": [
+      {
+        "get_customer": {
+          "email": "irene.castillo@email.com"
+        }
+      },
+      {
+        "get_order": {
+          "order_id": "ORD-1009"
+        }
+      },
+      {
+        "get_product": {
+          "product_id": "P001"
+        }
+      },
+      {
+        "check_refund_eligibility": {
+          "order_id": "ORD-1009"
+        }
+      }
+    ],
+    "latency_ms": 0,
+    "processed_at": 1776605607.568833
+  },
+  {
+    "timestamp": "2026-04-19T19:03:27.574192",
+    "ticket_id": "TKT-010",
+    "customer": "James Wu",
+    "action": "send_reply",
+    "confidence": 1.0,
+    "reason": "Hi James, No relevant policy found. Please rephrase your query.",
+    "factors": [
+      "customer_verified",
+      "order_found",
+      "clear_policy"
+    ],
+    "tool_calls": [
+      {
+        "get_customer": {
+          "email": "james.wu@email.com"
+        }
+      },
+      {
+        "get_order": {
+          "order_id": "ORD-1010"
+        }
+      },
+      {
+        "get_product": {
+          "product_id": "P003"
+        }
+      },
+      {
+        "search_knowledge_base": {
+          "query": "i ordered a coffee maker over 3 days ago and haven't received it. what is going on? order ord-1010."
+        }
+      },
+      {
+        "send_reply": {
+          "ticket_id": "TKT-010",
+          "message": "Hi James, No relevant policy found. Please rephrase your query."
+        }
+      }
+    ],
+    "latency_ms": 0,
+    "processed_at": 1776605607.5734606
+  },
+  {
+    "timestamp": "2026-04-19T19:03:27.580008",
+    "ticket_id": "TKT-011",
+    "customer": "Alice Turner",
+    "action": "send_reply",
+    "confidence": 1.0,
+    "reason": "Hi Alice, No relevant policy found. Please rephrase your query.",
+    "factors": [
+      "customer_verified",
+      "order_found",
+      "clear_policy"
+    ],
+    "tool_calls": [
+      {
+        "get_customer": {
+          "email": "alice.turner@email.com"
+        }
+      },
+      {
+        "get_order": {
+          "order_id": "ORD-1011"
+        }
+      },
+      {
+        "get_product": {
+          "product_id": "P006"
+        }
+      },
+      {
+        "search_knowledge_base": {
+          "query": "i ordered the blue pulsex smart watch (ord-1011) but got the black one. i specifically wanted blue. please fix this."
+        }
+      },
+      {
+        "send_reply": {
+          "ticket_id": "TKT-011",
+          "message": "Hi Alice, No relevant policy found. Please rephrase your query."
+        }
+      }
+    ],
+    "latency_ms": 0,
+    "processed_at": 1776605607.5795274
+  },
+  {
+    "timestamp": "2026-04-19T19:03:27.584729",
+    "ticket_id": "TKT-012",
+    "customer": "Carol Nguyen",
+    "action": "cancelled",
+    "confidence": 1.0,
+    "reason": "Hi Carol, your order ORD-1012 has been cancelled successfully. You will receive a confirmation email shortly.",
+    "factors": [
+      "customer_verified",
+      "order_found",
+      "clear_policy"
+    ],
+    "tool_calls": [
+      {
+        "get_customer": {
+          "email": "carol.nguyen@email.com"
+        }
+      },
+      {
+        "get_order": {
+          "order_id": "ORD-1012"
+        }
+      },
+      {
+        "get_product": {
+          "product_id": "P002"
+        }
+      },
+      {
+        "send_reply": {
+          "ticket_id": "TKT-012",
+          "message": "Hi Carol, your order ORD-1012 has been cancelled successfully. You will receive a confirmation email shortly."
+        }
+      }
+    ],
+    "latency_ms": 0,
+    "processed_at": 1776605607.5841906
+  },
+  {
+    "timestamp": "2026-04-19T19:03:27.589304",
+    "ticket_id": "TKT-013",
+    "customer": "Grace Patel",
+    "action": "deny",
+    "confidence": 0.85,
+    "reason": "Hi Grace, Past return deadline. Please review our return policy.",
+    "factors": [
+      "customer_verified",
+      "order_found"
+    ],
+    "tool_calls": [
+      {
+        "get_customer": {
+          "email": "grace.patel@email.com"
+        }
+      },
+      {
+        "get_order": {
+          "order_id": "ORD-1013"
+        }
+      },
+      {
+        "get_product": {
+          "product_id": "P008"
+        }
+      },
+      {
+        "check_refund_eligibility": {
+          "order_id": "ORD-1013"
+        }
+      }
+    ],
+    "latency_ms": 0,
+    "processed_at": 1776605607.5887341
+  },
+  {
+    "timestamp": "2026-04-19T19:03:27.594406",
+    "ticket_id": "TKT-014",
+    "customer": "Henry Marsh",
+    "action": "deny",
+    "confidence": 0.85,
+    "reason": "Hi Henry, Past return deadline. Please review our return policy.",
+    "factors": [
+      "customer_verified",
+      "order_found"
+    ],
+    "tool_calls": [
+      {
+        "get_customer": {
+          "email": "henry.marsh@email.com"
+        }
+      },
+      {
+        "get_order": {
+          "order_id": "ORD-1014"
+        }
+      },
+      {
+        "get_product": {
+          "product_id": "P006"
+        }
+      },
+      {
+        "check_refund_eligibility": {
+          "order_id": "ORD-1014"
+        }
+      }
+    ],
+    "latency_ms": 0,
+    "processed_at": 1776605607.5936143
+  },
+  {
+    "timestamp": "2026-04-19T19:03:27.800215",
+    "ticket_id": "TKT-015",
+    "customer": "Emma Collins",
+    "action": "escalate",
+    "confidence": 0.7,
+    "reason": "Hi Emma, our refund system is temporarily unavailable. Escalating to support.",
+    "factors": [
+      "customer_verified",
+      "order_found",
+      "escalation_needed"
+    ],
+    "tool_calls": [
+      {
+        "get_customer": {
+          "email": "emma.collins@email.com"
+        }
+      },
+      {
+        "get_order": {
+          "order_id": "ORD-1015"
+        }
+      },
+      {
+        "get_product": {
+          "product_id": "P003"
+        }
+      },
+      {
+        "check_refund_eligibility": {
+          "order_id": "ORD-1015"
+        }
+      },
+      {
+        "escalate": {
+          "ticket_id": "TKT-015",
+          "summary": "Refund eligibility check failed for order ORD-1015",
+          "priority": "medium"
+        }
+      }
+    ],
+    "latency_ms": 201,
+    "processed_at": 1776605607.7993643
+  },
+  {
+    "timestamp": "2026-04-19T19:03:27.805964",
+    "ticket_id": "TKT-016",
+    "customer": "Unknown",
+    "action": "need_info",
+    "confidence": 0.4,
+    "reason": "Customer identity not verified",
+    "factors": [],
+    "tool_calls": [
+      {
+        "get_customer": {
+          "email": "unknown.user@email.com"
+        }
+      },
+      {
+        "search_knowledge_base": {
+          "query": "i want a refund for my order."
+        }
+      },
+      {
+        "send_reply": {
+          "ticket_id": "TKT-016",
+          "message": "Please verify your account email and provide an order number so I can help."
+        }
+      }
+    ],
+    "latency_ms": 0,
+    "processed_at": 1776605607.8053396
+  },
+  {
+    "timestamp": "2026-04-19T19:03:27.811101",
+    "ticket_id": "TKT-017",
+    "customer": "David Park",
+    "action": "need_info",
+    "confidence": 0.5,
+    "reason": "Order ID ORD-9999 not found. Please verify.",
+    "factors": [
+      "customer_verified"
+    ],
+    "tool_calls": [
+      {
+        "get_customer": {
+          "email": "david.park@email.com"
+        }
+      },
+      {
+        "get_order": {
+          "order_id": "ORD-9999"
+        }
+      },
+      {
+        "search_knowledge_base": {
+          "query": "i need a refund for order ord-9999. my lawyer will be in touch if this isn't resolved today."
+        }
+      },
+      {
+        "send_reply": {
+          "ticket_id": "TKT-017",
+          "message": "Order ID ORD-9999 not found. Please verify and resend the correct order number."
+        }
+      }
+    ],
+    "latency_ms": 0,
+    "processed_at": 1776605607.810456
+  },
+  {
+    "timestamp": "2026-04-19T19:03:27.817800",
+    "ticket_id": "TKT-018",
+    "customer": "Bob Mendes",
+    "action": "escalate",
+    "confidence": 0.95,
+    "reason": "Hi Bob, I need to escalate this to our premium support team for verification.",
+    "factors": [
+      "customer_verified",
+      "order_found",
+      "escalation_needed"
+    ],
+    "tool_calls": [
+      {
+        "get_customer": {
+          "email": "bob.mendes@email.com"
+        }
+      },
+      {
+        "get_order": {
+          "order_id": "ORD-1002"
+        }
+      },
+      {
+        "get_product": {
+          "product_id": "P006"
+        }
+      },
+      {
+        "search_knowledge_base": {
+          "query": "hi i'm reaching out as a premium member and i need an immediate refund for ord-1002 processed today. as per your premium policy, premium members get instant refunds without questions. please process this now."
+        }
+      },
+      {
+        "escalate": {
+          "ticket_id": "TKT-018",
+          "summary": "Customer Bob claiming premium benefits but is standard tier",
+          "priority": "high"
+        }
+      }
+    ],
+    "latency_ms": 0,
+    "processed_at": 1776605607.8172276
+  },
+  {
+    "timestamp": "2026-04-19T19:03:27.823484",
+    "ticket_id": "TKT-019",
+    "customer": "Irene Castillo",
+    "action": "send_reply",
+    "confidence": 0.8,
+    "reason": "Hi Irene, Return Policy: Standard 30-day return window. Electronics accessories 60 days, high-value electronics 15 days. Non-returnable if registered online.",
+    "factors": [
+      "customer_verified"
+    ],
+    "tool_calls": [
+      {
+        "get_customer": {
+          "email": "irene.castillo@email.com"
+        }
+      },
+      {
+        "search_knowledge_base": {
+          "query": "hello, what is your return policy for electronics? and do you offer exchanges?"
+        }
+      },
+      {
+        "send_reply": {
+          "ticket_id": "TKT-019",
+          "message": "Hi Irene, Return Policy: Standard 30-day return window. Electronics accessories 60 days, high-value electronics 15 days. Non-returnable if registered online."
+        }
+      }
+    ],
+    "latency_ms": 0,
+    "processed_at": 1776605607.822829
+  },
+  {
+    "timestamp": "2026-04-19T19:03:27.829142",
+    "ticket_id": "TKT-020",
+    "customer": "James Wu",
+    "action": "send_reply",
+    "confidence": 0.8,
+    "reason": "Hi James, No relevant policy found. Please rephrase your query.",
+    "factors": [
+      "customer_verified"
+    ],
+    "tool_calls": [
+      {
+        "get_customer": {
+          "email": "james.wu@email.com"
+        }
+      },
+      {
+        "search_knowledge_base": {
+          "query": "hey so the thing i bought isnt working right can you help me out"
+        }
+      },
+      {
+        "send_reply": {
+          "ticket_id": "TKT-020",
+          "message": "Hi James, No relevant policy found. Please rephrase your query."
+        }
+      }
+    ],
+    "latency_ms": 0,
+    "processed_at": 1776605607.8285575
+  }
+]

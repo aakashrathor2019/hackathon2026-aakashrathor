@@ -1,22 +1,12 @@
 # ShopWave AI Customer Support Agent
 
-## 🎯 Hackathon Submission - Autonomous AI Operations System
+## Hackathon Submission - Autonomous AI Operations System
 
 An autonomous AI-powered customer support system for ShopWave e-commerce platform, designed to process support tickets intelligently using reasoning, tools, and policy understanding. Built for the 2026 Hackathon with production-ready architecture and comprehensive evaluation capabilities.
 
-### 📊 Hackathon Scoring Achievement
-
-- **Production Readiness (30pts)**: ✅ Modular architecture, comprehensive logging, error handling, security measures, clean code structure
-- **Agentic Design (10pts)**: ✅ Autonomous decision making, intelligent tool chaining (min 3 calls per decision), smart escalation logic
-- **Engineering Depth (30pts)**: ✅ Async concurrency, caching, state management, structured outputs, fault tolerance
-- **Evaluation & Self-awareness (10pts)**: ✅ Confidence scoring, low-confidence fallback, detailed audit trails, performance metrics
-- **Presentation/Deployment (20pts)**: ✅ Live running app, interactive dashboard, decision explanations, single-command execution
-
-**Total Score Target: 100pts**
-
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 - Python 3.12+
@@ -50,7 +40,7 @@ streamlit run app.py
 
 ---
 
-## 🏗️ System Architecture
+## System Architecture
 
 ### Core Components
 
@@ -92,15 +82,15 @@ failure_modes.md     # Failure analysis and mitigation strategies
 
 ---
 
-## 🎯 Agent Capabilities
+##  Agent Capabilities
 
 ### Supported Actions
-- ✅ **approve_refund**: Process refund requests with eligibility validation
-- ✅ **deny_refund**: Deny ineligible refund requests with explanation
-- ✅ **send_reply**: Send informational responses (tracking, policies, etc.)
-- ✅ **escalate**: Route complex cases to human agents with priority
-- ✅ **need_info**: Request additional information from customers
-- ✅ **cancelled**: Handle order cancellation requests
+-  **approve_refund**: Process refund requests with eligibility validation
+-  **deny_refund**: Deny ineligible refund requests with explanation
+-  **send_reply**: Send informational responses (tracking, policies, etc.)
+-  **escalate**: Route complex cases to human agents with priority
+-  **need_info**: Request additional information from customers
+-  **cancelled**: Handle order cancellation requests
 
 ### Intelligent Features
 - **Customer Tier Awareness**: VIP customers get expedited service
@@ -118,7 +108,7 @@ failure_modes.md     # Failure analysis and mitigation strategies
 
 ---
 
-## 🔧 Technical Implementation
+## Technical Implementation
 
 ### Key Technologies
 - **Python 3.12**: Modern async/await patterns
@@ -151,7 +141,7 @@ escalate(ticket_id: str, summary: str, priority: str) -> dict
 
 ---
 
-## 📊 Dashboard & Monitoring
+##  Dashboard & Monitoring
 
 ### Streamlit Dashboard (`app.py`)
 - **Real-time Metrics**: Processing status, success rates, confidence scores
@@ -171,7 +161,7 @@ escalate(ticket_id: str, summary: str, priority: str) -> dict
 
 ---
 
-## 🧪 Testing & Validation
+##  Testing & Validation
 
 ### Comprehensive Test Suite
 ```bash
@@ -180,11 +170,11 @@ python test_agent.py
 ```
 
 **Test Results Summary:**
-- ✅ All 20 tickets processed successfully
-- ✅ Tool chaining validated (min 3 calls per decision)
-- ✅ Confidence scoring working (0.4-0.95 range)
-- ✅ Error handling tested with simulated failures
-- ✅ Audit logging complete with decision explanations
+-  All 20 tickets processed successfully
+-  Tool chaining validated (min 3 calls per decision)
+-  Confidence scoring working (0.4-0.95 range)
+-  Error handling tested with simulated failures
+-  Audit logging complete with decision explanations
 
 ### Sample Test Output
 ```
@@ -202,9 +192,9 @@ Results: 20/20 tickets processed, avg confidence: 0.72
 
 ---
 
-## 📋 Deliverables Checklist
+##  Deliverables Checklist
 
-### ✅ Completed Deliverables
+###  Completed Deliverables
 - [x] **Working Code**: Complete Python application with all modules
 - [x] **Architecture Diagram**: Comprehensive system design documentation
 - [x] **Failure Modes Analysis**: Detailed failure scenarios and mitigations
@@ -215,7 +205,7 @@ Results: 20/20 tickets processed, avg confidence: 0.72
 - [x] **Self-Awareness**: Confidence metrics, audit trails, performance monitoring
 - [x] **Presentation**: Interactive dashboard, clear documentation, single-command run
 
-### 📁 File Structure Validation
+###  File Structure Validation
 ```
 shopwave-agent/
 ├── core/                    # Core agent modules
@@ -240,7 +230,7 @@ shopwave-agent/
 
 ---
 
-## 🚨 Failure Modes & Recovery
+##  Failure Modes & Recovery
 
 ### Comprehensive Failure Analysis (See `failure_modes.md`)
 - **Tool Failures**: Network timeouts, service unavailability (5-10% simulated)
@@ -258,7 +248,7 @@ shopwave-agent/
 
 ---
 
-## 🔒 Security & Compliance
+##  Security & Compliance
 
 ### Security Measures
 - **Input Validation**: All inputs sanitized and validated
@@ -274,7 +264,7 @@ shopwave-agent/
 
 ---
 
-## 📈 Performance & Scalability
+##  Performance & Scalability
 
 ### Performance Characteristics
 - **Throughput**: 100+ tickets/minute with async processing
@@ -291,7 +281,7 @@ shopwave-agent/
 
 ---
 
-## 🎬 Demo Instructions
+##  Demo Instructions
 
 ### Quick Demo (5 minutes)
 1. **Setup**: Run `python test_agent.py` (single command)
@@ -309,7 +299,7 @@ shopwave-agent/
 
 ---
 
-## 🤝 Contributing & Support
+##  Contributing & Support
 
 ### Development Setup
 ```bash
@@ -337,7 +327,7 @@ python -m pytest
 
 ---
 
-## 📄 License & Acknowledgments
+##  License & Acknowledgments
 
 ### License
 MIT License - See LICENSE file for details
